@@ -60,12 +60,16 @@ def calculate():
         elif operation == '*':
             result = first_number * second_number
         elif operation == '/':
-            result = first_number // second_number
-
+            result = first_number / second_number
+        elif operation == '^':
+            result = first_number ** second_number
         result_history.append(result)
         return result
     except TypeError:
         print("You didn't have a previous answer to begin with!")
+    except ZeroDivisionError:
+        result_history.append('undefined')
+        print("You divided by 0: undefined")
 
 
 os.system('clear')
